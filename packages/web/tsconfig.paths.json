@@ -2,7 +2,7 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "core/*": ["../core/src/*"]
+      "wbt-core/*": ["node_modules/@wbt/core/dist/*"]
     }
   }
 }

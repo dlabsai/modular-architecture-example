@@ -1,3 +1,3 @@
-export function get3(){
-    return 3;
+export function getNumber() {
+    return 5;
 }
