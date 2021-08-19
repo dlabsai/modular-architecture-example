@@ -11,6 +11,7 @@
     "@types/react": "^17.0.8",
     "@types/react-dom": "^17.0.5",
     "@wbt/core": "^0.0.1",
+    "@zaki-yama/my-typescript-package": "^0.0.6",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-scripts": "4.0.3",

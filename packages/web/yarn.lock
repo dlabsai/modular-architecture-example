@@ -2195,6 +2195,13 @@
   resolved "https://registry.yarnpkg.com/@xtuc/long/-/long-4.2.2.tgz#d291c6a4e97989b5c61d9acf396ae4fe133a718d"
   integrity sha512-NuHqBY1PB/D8xU6s/thBgOAiAP7HOYDQ32+BFZILJ8ivkUkAHQnWfn6WhL79Owj1qmUnoN/YPhktdIoucipkAQ==
 
+"@zaki-yama/my-typescript-package@^0.0.6":
+  version "0.0.6"
+  resolved "https://registry.yarnpkg.com/@zaki-yama/my-typescript-package/-/my-typescript-package-0.0.6.tgz#3197fcf36f49f0759396d0ea13771b10938e9f3e"
+  integrity sha512-PnEt7mRh2VorSMF4nJBoORcACamFaK5SuKs6KvJ9YgSK5W0uePcG0UNCj0iaeEZYYImkg50R1pMBSvhn7T8nVQ==
+  dependencies:
+    pluralize "^8.0.0"
+
 abab@^2.0.3, abab@^2.0.5:
   version "2.0.5"
   resolved "https://registry.yarnpkg.com/abab/-/abab-2.0.5.tgz#c0b678fb32d60fc1219c784d6a826fe385aeb79a"
@@ -7991,6 +7998,11 @@ pkg-up@^2.0.0:
   dependencies:
     find-up "^2.1.0"
 
+pluralize@^8.0.0:
+  version "8.0.0"
+  resolved "https://registry.yarnpkg.com/pluralize/-/pluralize-8.0.0.tgz#1a6fa16a38d12a1901e0320fa017051c539ce3b1"
+  integrity sha512-Nc3IT5yHzflTfbjgqWcCPpo7DaKy4FnpB0l/zCAW0Tc7jxAiuqSxHasntB3D7887LSrA93kDJ9IXovxJYxyLCA==
+
 pnp-webpack-plugin@1.6.4:
   version "1.6.4"
   resolved "https://registry.yarnpkg.com/pnp-webpack-plugin/-/pnp-webpack-plugin-1.6.4.tgz#c9711ac4dc48a685dabafc86f8b6dd9f8df84149"
@@ -10873,9 +10885,6 @@ watchpack@^1.7.4:
   optionalDependencies:
     chokidar "^3.4.1"
     watchpack-chokidar2 "^2.0.1"
-
-"wbt-core@file:../core":
-  version "0.0.1"
 
 wbuf@^1.1.0, wbuf@^1.7.3:
   version "1.7.3"
