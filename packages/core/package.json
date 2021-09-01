@@ -16,5 +16,8 @@
     "build": "rm -rf dist && tsc",
     "test": "jest",
     "postinstall": "tsc"
+  },
+  "dependencies": {
+    "@reduxjs/toolkit": "^1.6.1"
   }
 }
