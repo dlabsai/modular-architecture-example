@@ -1,13 +1,18 @@
-import { Fragment } from 'react';
+import styled from 'styled-components';
 import { resetCalculator } from '@wbt/core/dist/modules/CalculatorModule/services/FatProteinService';
+import { Button } from '../../../ui';
+
+const Container = styled.div`
+  margin: 0 -5px;
+`;
 
 export const CalculatorControls = () => {
   return (
-    <Fragment>
-      <button type="submit">calculate</button>
-      <button type="button" onClick={resetCalculator}>
+    <Container>
+      <Button type="submit">Calculate</Button>
+      <Button type="button" onClick={resetCalculator}>
         Reset
-      </button>
-    </Fragment>
+      </Button>
+    </Container>
   );
 };

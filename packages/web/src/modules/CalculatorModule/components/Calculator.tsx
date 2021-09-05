@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { calculateWBT } from '@wbt/core/dist/modules/CalculatorModule/services/FatProteinService';
 import { CalculatorControls } from './CalculatorControls';
 import { CalculatorFields } from './CalculatorFields';
@@ -11,12 +11,12 @@ export const Calculator = () => {
   };
 
   return (
-    <div>
+    <Fragment>
       <form onSubmit={handleSubmit}>
         <CalculatorFields />
         <CalculatorControls />
       </form>
       <CalculatorResult />
-    </div>
+    </Fragment>
   );
 };

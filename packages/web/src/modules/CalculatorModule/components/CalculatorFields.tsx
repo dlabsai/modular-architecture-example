@@ -5,6 +5,7 @@ import {
 } from '@wbt/core/dist/modules/CalculatorModule/services/FatProteinService';
 import { Fragment } from 'react';
 import { useSelector } from 'react-redux';
+import { Input } from '../../../ui';
 
 export const CalculatorFields = () => {
   const proteinsInGrams = useSelector(
@@ -14,30 +15,20 @@ export const CalculatorFields = () => {
 
   return (
     <Fragment>
-      <div>
-        <label htmlFor="proteins">Proteins [g]</label>
-        <input
-          type="number"
-          id="proteins"
-          name="proteins"
-          value={proteinsInGrams}
-          onChange={({ target }) => {
-            setProteins(target.value);
-          }}
-        ></input>
-      </div>
-      <div>
-        <label htmlFor="fats">Fats [g]</label>
-        <input
-          type="number"
-          id="fats"
-          name="fats"
-          value={fatsInGrams}
-          onChange={({ target }) => {
-            setFats(target.value);
-          }}
-        ></input>
-      </div>
+      <Input
+        id="proteins"
+        label="Proteins [g]"
+        onChange={setProteins}
+        value={proteinsInGrams}
+        type="number"
+      />
+      <Input
+        id="fats"
+        label="Fats [g]"
+        onChange={setFats}
+        value={fatsInGrams}
+        type="number"
+      />
     </Fragment>
   );
 };
