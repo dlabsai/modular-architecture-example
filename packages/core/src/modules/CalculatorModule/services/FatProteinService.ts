@@ -9,13 +9,42 @@ function getCalculatedWBT(fatsInGrams: number, proteinsInGrams: number) {
   return wbt;
 }
 
-export function calculateWBT(fatsInGrams: number, proteinsInGrams: number) {
+function setResultToStore(result: number) {
+  const { setCalculationResult } = calculatorSlice.actions;
+  const action = setCalculationResult(result);
+  store.dispatch(action);
+}
+
+export function setFats(value: string) {
+  const fatsInGrams = Number(value);
+  if (Number.isNaN(fatsInGrams)) {
+    return;
+  }
+
+  const { setFats } = calculatorSlice.actions;
+  const action = setFats(fatsInGrams);
+  store.dispatch(action);
+}
+
+export function setProteins(value: string) {
+  const proteinsInGrams = Number(value);
+  if (Number.isNaN(proteinsInGrams)) {
+    return;
+  }
+
+  const { setProteins } = calculatorSlice.actions;
+  const action = setProteins(proteinsInGrams);
+  store.dispatch(action);
+}
+
+export function calculateWBT() {
+  const { fatsInGrams, proteinsInGrams } = store.getState();
   const wbt = getCalculatedWBT(fatsInGrams, proteinsInGrams);
-  const { setWBT } = calculatorSlice.actions;
-  store.dispatch(setWBT(wbt));
+  setResultToStore(wbt);
 }
 
 export function resetCalculator() {
-  const { resetWBT } = calculatorSlice.actions;
-  store.dispatch(resetWBT());
+  const { resetCalculator } = calculatorSlice.actions;
+  const action = resetCalculator();
+  store.dispatch(action);
 }

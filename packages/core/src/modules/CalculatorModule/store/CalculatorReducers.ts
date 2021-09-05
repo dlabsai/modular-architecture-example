@@ -1,14 +1,13 @@
-import { Draft, PayloadAction } from '@reduxjs/toolkit';
-import initialState from '../constants/InitialCalculatorState';
+import {
+  resetCalculator,
+  setCalculationResult,
+  setFats,
+  setProteins,
+} from './CalculatorActions';
 
 export const reducers = {
-  setWBT: (
-    state: Draft<typeof initialState>,
-    action: PayloadAction<number>
-  ): void => {
-    state.result = action.payload;
-  },
-  resetWBT: (state: Draft<typeof initialState>): void => {
-    state.result = 0;
-  },
+  setCalculationResult,
+  setFats,
+  setProteins,
+  resetCalculator,
 };

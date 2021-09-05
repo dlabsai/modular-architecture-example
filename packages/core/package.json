@@ -20,5 +20,11 @@
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.6.1"
+  },
+  "jest": {
+    "testPathIgnorePatterns": [
+      "<rootDir>/dist/",
+      "<rootDir>/node_modules/"
+    ]
   }
 }
