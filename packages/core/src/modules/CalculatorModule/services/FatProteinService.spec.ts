@@ -1,6 +1,6 @@
 import { store } from '../../AppModule/store/Store';
 import {
-  calculateWBT,
+  calculateFPU,
   resetCalculator,
   setFats,
   setProteins,
@@ -11,14 +11,14 @@ describe('CalculatorModule/FatProteinService', () => {
     resetCalculator();
   });
 
-  it('calculate WBT based on protein and fat intake and set it in the store', () => {
+  it('calculate FPU based on protein and fat intake and set it in the store', () => {
     const fatsInGrams = '13';
     const proteinsInGrams = '7';
 
     setFats(fatsInGrams);
     setProteins(proteinsInGrams);
     const initialValue = store.getState().result;
-    calculateWBT();
+    calculateFPU();
     const newValue = store.getState().result;
 
     expect(typeof initialValue).toBe('number');
@@ -27,13 +27,13 @@ describe('CalculatorModule/FatProteinService', () => {
     expect(newValue).toEqual(1.45);
   });
 
-  it('reset WBT value to 0 in the store', () => {
+  it('reset FPU value to 0 in the store', () => {
     const fatsInGrams = '13';
     const proteinsInGrams = '7';
 
     setFats(fatsInGrams);
     setProteins(proteinsInGrams);
-    calculateWBT();
+    calculateFPU();
     const initialValue = store.getState().result;
     resetCalculator();
     const newValue = store.getState().result;

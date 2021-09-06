@@ -1,7 +1,7 @@
 import { store } from '../../AppModule/store/Store';
 import { calculatorSlice } from '../store/CalculatorSlice';
 
-function getCalculatedWBT(fatsInGrams: number, proteinsInGrams: number) {
+function getCalculatedFPU(fatsInGrams: number, proteinsInGrams: number) {
   const caloriesFromFatsAndCalories = fatsInGrams * 9 + proteinsInGrams * 4;
   const wbt =
     Math.round((caloriesFromFatsAndCalories / 100) * 100 + Number.EPSILON) /
@@ -37,9 +37,9 @@ export function setProteins(value: string) {
   store.dispatch(action);
 }
 
-export function calculateWBT() {
+export function calculateFPU() {
   const { fatsInGrams, proteinsInGrams } = store.getState();
-  const wbt = getCalculatedWBT(fatsInGrams, proteinsInGrams);
+  const wbt = getCalculatedFPU(fatsInGrams, proteinsInGrams);
   setResultToStore(wbt);
 }
 

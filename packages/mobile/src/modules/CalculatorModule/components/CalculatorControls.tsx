@@ -1,7 +1,7 @@
 import React from 'react';
 import {Button, StyleSheet, View} from 'react-native';
 import {
-  calculateWBT,
+  calculateFPU,
   resetCalculator,
 } from '@wbt/core/dist/modules/CalculatorModule/services/FatProteinService';
 
@@ -15,7 +15,7 @@ const styles = StyleSheet.create({
 export const CalculatorControls = () => (
   <View style={styles.view}>
     <Button
-      onPress={calculateWBT}
+      onPress={calculateFPU}
       title="Calculate"
       accessibilityLabel="Calculate FPU"
     />
