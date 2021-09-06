@@ -1,12 +1,12 @@
 import React from 'react';
-import {Text, View} from 'react-native';
+import {Container, Header} from '../../../ui';
 import {Calculator} from '../components/Calculator';
 
 export const FPUView = () => {
   return (
-    <View>
-      <Text>Calculate FPU (fat and protein)</Text>
+    <Container>
+      <Header>Calculate FPU (fat and protein)</Header>
       <Calculator />
-    </View>
+    </Container>
   );
 };

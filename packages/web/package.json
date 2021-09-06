@@ -22,10 +22,10 @@
     "web-vitals": "^1.1.2"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "FAST_REFRESH=false react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --watchAll=false",
-    "test:watchAll": "react-scripts test",
+    "test": "react-scripts test --watchAll=false --passWithNoTests",
+    "test:watchAll": "react-scripts test --passWithNoTests",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {

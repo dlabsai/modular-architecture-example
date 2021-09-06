@@ -1,33 +1,29 @@
-import {RootState} from '@wbt/core/dist/modules/AppModule/store/Store';
+import React, { Fragment } from 'react';
+import { useSelector } from 'react-redux';
+import { RootState } from '@wbt/core/dist/modules/AppModule/store/Store';
 import {
-  setFats,
-  setProteins,
+    setFats, setProteins
 } from '@wbt/core/dist/modules/CalculatorModule/services/FatProteinService';
-import React, {Fragment} from 'react';
-import {Text, TextInput} from 'react-native';
-import {useSelector} from 'react-redux';
+import { Input } from '../../../ui';
 
 export const CalculatorFields = () => {
   const proteinsInGrams = useSelector(
     (state: RootState) => state.proteinsInGrams,
   );
   const fatsInGrams = useSelector((state: RootState) => state.fatsInGrams);
+
   return (
     <Fragment>
-      <Text>Proteins [g]</Text>
-      <TextInput
-        /* style={styles.input} */
-        onChangeText={value => setProteins(value)}
-        value={proteinsInGrams.toString()}
-        placeholder="Proteins in grams"
+      <Input
+        label="Proteins [g]"
+        onChange={setProteins}
+        value={proteinsInGrams}
         keyboardType="numeric"
       />
-      <Text>Fats [g]</Text>
-      <TextInput
-        /* style={styles.input} */
-        onChangeText={value => setFats(value)}
-        value={fatsInGrams.toString()}
-        placeholder="Fats in grams"
+      <Input
+        label="Fats [g]"
+        onChange={setFats}
+        value={fatsInGrams}
         keyboardType="numeric"
       />
     </Fragment>
