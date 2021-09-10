@@ -1,7 +1,7 @@
 import React from 'react';
-import {RootState} from '@wbt/core/dist/modules/AppModule/store/Store';
-import {StyleSheet, Text} from 'react-native';
-import {useSelector} from 'react-redux';
+import { RootState } from '@wbt/core/dist/modules/AppModule/store/Store';
+import { StyleSheet, Text } from 'react-native';
+import { useSelector } from 'react-redux';
 
 const styles = StyleSheet.create({
   result: {

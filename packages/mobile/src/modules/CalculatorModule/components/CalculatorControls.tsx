@@ -1,5 +1,5 @@
 import React from 'react';
-import {Button, StyleSheet, View} from 'react-native';
+import { Button, StyleSheet, View } from 'react-native';
 import {
   calculateFPU,
   resetCalculator,
@@ -9,7 +9,7 @@ const styles = StyleSheet.create({
   view: {
     flexDirection: 'row',
     justifyContent: 'flex-start',
-  }
+  },
 });
 
 export const CalculatorControls = () => (

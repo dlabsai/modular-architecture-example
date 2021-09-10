@@ -11,14 +11,14 @@ export function setCalculationResult(
 export function setFats(
   state: Draft<typeof initialState>,
   action: PayloadAction<number>
-) {
+): void {
   state.fatsInGrams = action.payload;
 }
 
 export function setProteins(
   state: Draft<typeof initialState>,
   action: PayloadAction<number>
-) {
+): void {
   state.proteinsInGrams = action.payload;
 }
 

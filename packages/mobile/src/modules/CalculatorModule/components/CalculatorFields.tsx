@@ -2,13 +2,14 @@ import React, { Fragment } from 'react';
 import { useSelector } from 'react-redux';
 import { RootState } from '@wbt/core/dist/modules/AppModule/store/Store';
 import {
-    setFats, setProteins
+  setFats,
+  setProteins,
 } from '@wbt/core/dist/modules/CalculatorModule/services/FatProteinService';
 import { Input } from '../../../ui';
 
 export const CalculatorFields = () => {
   const proteinsInGrams = useSelector(
-    (state: RootState) => state.proteinsInGrams,
+    (state: RootState) => state.proteinsInGrams
   );
   const fatsInGrams = useSelector((state: RootState) => state.fatsInGrams);
 

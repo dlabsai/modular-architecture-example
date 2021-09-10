@@ -1,5 +1,11 @@
-import React, {FC} from 'react';
-import {KeyboardTypeOptions, StyleSheet, Text, TextInput, View} from 'react-native';
+import React, { FC } from 'react';
+import {
+  KeyboardTypeOptions,
+  StyleSheet,
+  Text,
+  TextInput,
+  View,
+} from 'react-native';
 
 const styles = StyleSheet.create({
   container: {
@@ -32,10 +38,10 @@ export const Input: FC<Props> = ({
   <View style={styles.container}>
     <Text style={styles.label}>{label}</Text>
     <TextInput
-        style={styles.input}
-        onChangeText={handleOnChange}
-        value={String(value)}
-        keyboardType={keyboardType}
-      />
+      style={styles.input}
+      onChangeText={handleOnChange}
+      value={String(value)}
+      keyboardType={keyboardType}
+    />
   </View>
 );

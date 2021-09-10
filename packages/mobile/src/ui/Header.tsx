@@ -1,5 +1,5 @@
-import React, {FC} from 'react';
-import {StyleSheet, Text} from 'react-native';
+import React, { FC } from 'react';
+import { StyleSheet, Text } from 'react-native';
 
 const styles = StyleSheet.create({
   header: {
@@ -13,6 +13,6 @@ interface Props {
   children: string;
 }
 
-export const Header: FC<Props> = ({children}) => (
+export const Header: FC<Props> = ({ children }) => (
   <Text style={styles.header}>{children}</Text>
 );
