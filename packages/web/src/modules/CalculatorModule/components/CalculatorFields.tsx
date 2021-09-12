@@ -2,27 +2,42 @@ import { RootState } from '@wbt/core/dist/modules/AppModule/store/Store';
 import {
   setFatsValue,
   setProteinsValue,
+  setPortionValue,
+  setIsForPortion,
 } from '@wbt/core/dist/modules/CalculatorModule/services/FatProteinService';
 import { Fragment } from 'react';
 import { useSelector } from 'react-redux';
-import { Input } from '../../../ui';
+import { TextNumberInput, Checkbox } from '../../../ui/Inputs';
 
 export const CalculatorFields = () => {
-  const proteinsInGrams = useSelector(
-    (state: RootState) => state.proteinsInGrams
-  );
-  const fatsInGrams = useSelector((state: RootState) => state.fatsInGrams);
+  const { fatsInGrams, isCalculationForPortion, portionInGrams, proteinsInGrams } =
+    useSelector((state: RootState) => state);
 
   return (
     <Fragment>
-      <Input
+      <Checkbox
+        id="portion"
+        label="Calculate for portion"
+        onChange={setIsForPortion}
+        isChecked={isCalculationForPortion}
+      />
+      {isCalculationForPortion && (
+        <TextNumberInput
+          id="portion"
+          label="Portion [g]"
+          onChange={setPortionValue}
+          value={portionInGrams}
+          type="number"
+        />
+      )}
+      <TextNumberInput
         id="proteins"
         label="Proteins [g]"
         onChange={setProteinsValue}
         value={proteinsInGrams}
         type="number"
       />
-      <Input
+      <TextNumberInput
         id="fats"
         label="Fats [g]"
         onChange={setFatsValue}

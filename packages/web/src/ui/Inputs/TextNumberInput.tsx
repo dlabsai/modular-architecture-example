@@ -18,7 +18,7 @@ interface Props {
   type?: 'number' | 'text';
 }
 
-export const Input: FC<Props> = ({
+export const TextNumberInput: FC<Props> = ({
   id,
   label,
   onChange: handleOnChange,
