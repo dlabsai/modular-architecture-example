@@ -3,7 +3,7 @@ import {
   KeyboardTypeOptions,
   StyleSheet,
   Text,
-  TextInput,
+  TextInput as Input,
   View,
 } from 'react-native';
 
@@ -29,7 +29,7 @@ interface Props {
   keyboardType?: KeyboardTypeOptions;
 }
 
-export const Input: FC<Props> = ({
+export const TextInput: FC<Props> = ({
   label,
   onChange: handleOnChange,
   value,
@@ -37,7 +37,7 @@ export const Input: FC<Props> = ({
 }) => (
   <View style={styles.container}>
     <Text style={styles.label}>{label}</Text>
-    <TextInput
+    <Input
       style={styles.input}
       onChangeText={handleOnChange}
       value={String(value)}
