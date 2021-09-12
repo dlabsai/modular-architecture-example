@@ -1,7 +1,7 @@
 import { RootState } from '@wbt/core/dist/modules/AppModule/store/Store';
 import {
-  setFats,
-  setProteins,
+  setFatsValue,
+  setProteinsValue,
 } from '@wbt/core/dist/modules/CalculatorModule/services/FatProteinService';
 import { Fragment } from 'react';
 import { useSelector } from 'react-redux';
@@ -18,14 +18,14 @@ export const CalculatorFields = () => {
       <Input
         id="proteins"
         label="Proteins [g]"
-        onChange={setProteins}
+        onChange={setProteinsValue}
         value={proteinsInGrams}
         type="number"
       />
       <Input
         id="fats"
         label="Fats [g]"
-        onChange={setFats}
+        onChange={setFatsValue}
         value={fatsInGrams}
         type="number"
       />

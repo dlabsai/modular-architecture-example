@@ -1,15 +1,27 @@
 import { store } from '../../AppModule/store/Store';
 import { calculatorSlice } from '../store/CalculatorSlice';
+import { FPUComponents } from '../typings';
 
-function getCalculatedFPU(
-  fatsInGrams: number,
-  proteinsInGrams: number
-): number {
-  const caloriesFromFatsAndCalories = fatsInGrams * 9 + proteinsInGrams * 4;
-  const wbt =
-    Math.round((caloriesFromFatsAndCalories / 100) * 100 + Number.EPSILON) /
-    100;
-  return wbt;
+function getCalories(fpuComponents: FPUComponents): number {
+  const {
+    fatsInGrams,
+    isCalculationForPortion,
+    proteinsInGrams,
+    portionInGrams,
+  } = fpuComponents;
+  const caloriesFromFatsAndProteins = fatsInGrams * 9 + proteinsInGrams * 4;
+
+  if (!isCalculationForPortion) {
+    return caloriesFromFatsAndProteins;
+  }
+
+  return (caloriesFromFatsAndProteins * Number(portionInGrams)) / 100;
+}
+
+function getCalculatedFPU(fpuComponents: FPUComponents): number {
+  const calories = getCalories(fpuComponents);
+  const fpu = Math.round((calories / 100) * 100 + Number.EPSILON) / 100;
+  return fpu;
 }
 
 function setResultToStore(result: number): void {
@@ -18,7 +30,7 @@ function setResultToStore(result: number): void {
   store.dispatch(action);
 }
 
-export function setFats(value: string): void {
+export function setFatsValue(value: string): void {
   const fatsInGrams = Number(value);
   if (Number.isNaN(fatsInGrams)) {
     return;
@@ -29,7 +41,7 @@ export function setFats(value: string): void {
   store.dispatch(action);
 }
 
-export function setProteins(value: string): void {
+export function setProteinsValue(value: string): void {
   const proteinsInGrams = Number(value);
   if (Number.isNaN(proteinsInGrams)) {
     return;
@@ -40,10 +52,38 @@ export function setProteins(value: string): void {
   store.dispatch(action);
 }
 
+export function setPortionValue(value: string): void {
+  const portionInGrams = Number(value);
+  if (Number.isNaN(portionInGrams)) {
+    return;
+  }
+
+  const { setPortion } = calculatorSlice.actions;
+  const action = setPortion(portionInGrams);
+  store.dispatch(action);
+}
+
+export function setIsForPortion(value: boolean): void {
+  const { setCalculateForPortion } = calculatorSlice.actions;
+  const action = setCalculateForPortion(value);
+  store.dispatch(action);
+}
+
 export function calculateFPU(): void {
-  const { fatsInGrams, proteinsInGrams } = store.getState();
-  const wbt = getCalculatedFPU(fatsInGrams, proteinsInGrams);
-  setResultToStore(wbt);
+  const {
+    fatsInGrams,
+    proteinsInGrams,
+    isCalculationForPortion,
+    portionInGrams,
+  } = store.getState();
+  const fpuComponents: FPUComponents = {
+    fatsInGrams,
+    proteinsInGrams,
+    portionInGrams,
+    isCalculationForPortion,
+  };
+  const fpu = getCalculatedFPU(fpuComponents);
+  setResultToStore(fpu);
 }
 
 export function resetCalculator(): void {

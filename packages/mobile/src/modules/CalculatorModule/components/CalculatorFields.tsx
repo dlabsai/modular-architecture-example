@@ -2,8 +2,8 @@ import React, { Fragment } from 'react';
 import { useSelector } from 'react-redux';
 import { RootState } from '@wbt/core/dist/modules/AppModule/store/Store';
 import {
-  setFats,
-  setProteins,
+  setFatsValue,
+  setProteinsValue,
 } from '@wbt/core/dist/modules/CalculatorModule/services/FatProteinService';
 import { Input } from '../../../ui';
 
@@ -17,13 +17,13 @@ export const CalculatorFields = () => {
     <Fragment>
       <Input
         label="Proteins [g]"
-        onChange={setProteins}
+        onChange={setProteinsValue}
         value={proteinsInGrams}
         keyboardType="numeric"
       />
       <Input
         label="Fats [g]"
-        onChange={setFats}
+        onChange={setFatsValue}
         value={fatsInGrams}
         keyboardType="numeric"
       />
