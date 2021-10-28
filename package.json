@@ -23,7 +23,7 @@
     "start:android": "lerna run android --scope @wbt/mobile",
     "test": "lerna run test",
     "lint": "eslint '**/*.{ts,tsx}' --max-warnings 0 --cache",
-    "prepare": "husky install && npx mrm@2 lint-staged"
+    "prepare": "husky install"
   },
   "lint-staged": {
     "*.{ts,tsx}": "eslint --fix --max-warnings 0 --cache"
