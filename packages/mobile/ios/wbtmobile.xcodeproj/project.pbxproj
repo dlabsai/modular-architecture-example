@@ -11,6 +11,7 @@
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		2F3CB473A4B38CF94A3DEB19 /* libPods-wbtmobile.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FE8868797D3782D94E9EEB02 /* libPods-wbtmobile.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		FE1D89ECA944332889346425 /* libPods-wbtmobile-wbtmobileTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1822BB75E3E97BB058FF2DA5 /* libPods-wbtmobile-wbtmobileTests.a */; };
 /* End PBXBuildFile section */
@@ -58,6 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F3CB473A4B38CF94A3DEB19 /* libPods-wbtmobile.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
