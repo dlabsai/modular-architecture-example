@@ -6,6 +6,7 @@ module.exports = {
     'plugin:@typescript-eslint/recommended',
   ],
   plugins: ['react', 'prettier', '@typescript-eslint'],
+  ignorePatterns: ['**/dist/*'],
   rules: {
     semi: ['error', 'always'],
     quotes: ['error', 'single'],
@@ -14,5 +15,5 @@ module.exports = {
     'prettier/prettier': ['error'],
     '@typescript-eslint/no-unused-vars': 'error',
     'no-console': 2,
-  }
+  },
 };

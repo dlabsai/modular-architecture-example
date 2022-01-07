@@ -13,6 +13,23 @@ describe('CalculatorModule/FatProteinService', () => {
     resetCalculator();
   });
 
+  it('reset FPU value to 0 in the store', () => {
+    const fatsInGrams = '13';
+    const proteinsInGrams = '7';
+
+    setFatsValue(fatsInGrams);
+    setProteinsValue(proteinsInGrams);
+    calculateFPU();
+    const initialValue = store.getState().result;
+    resetCalculator();
+    const newValue = store.getState().result;
+
+    expect(typeof initialValue).toBe('number');
+    expect(initialValue).toEqual(1.45);
+    expect(typeof newValue).toBe('number');
+    expect(newValue).toEqual(0);
+  });
+
   it('calculate FPU based on protein and fat intake and set it in the store', () => {
     const fatsInGrams = '13';
     const proteinsInGrams = '7';
@@ -46,23 +63,6 @@ describe('CalculatorModule/FatProteinService', () => {
     expect(initialValue).toEqual(0);
     expect(typeof newValue).toBe('number');
     expect(newValue).toEqual(1.6);
-  });
-
-  it('reset FPU value to 0 in the store', () => {
-    const fatsInGrams = '13';
-    const proteinsInGrams = '7';
-
-    setFatsValue(fatsInGrams);
-    setProteinsValue(proteinsInGrams);
-    calculateFPU();
-    const initialValue = store.getState().result;
-    resetCalculator();
-    const newValue = store.getState().result;
-
-    expect(typeof initialValue).toBe('number');
-    expect(initialValue).toEqual(1.45);
-    expect(typeof newValue).toBe('number');
-    expect(newValue).toEqual(0);
   });
 
   it('set fats and proteins basend on a string that can be casted to number', () => {
